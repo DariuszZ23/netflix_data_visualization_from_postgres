@@ -1,3 +1,4 @@
+import re
 import psycopg2
 import yaml
 import matplotlib.pyplot as plt
@@ -20,18 +21,15 @@ def netflix_statistics():
         )
 
         cursor = connection.cursor()
-        # Testowe zapytanie
-        cursor.execute("SELECT version();")
-        result = cursor.fetchone()
-        print("Wersja PostgreSQL:", result)
-
         productions_by_country(cursor)
         netflix_productions_by_type(cursor)
+        generate_movie_duration_histogram(cursor)
+        generate_titles_per_year_chart(cursor)
         cursor.close()
         connection.close()
 
     except Exception as e:
-        print("Błąd połączenia:", e)
+        print("Connection error:", e)
 
 def productions_by_country(cursor):
     # top 10 krajów produkcji
@@ -57,9 +55,9 @@ def productions_by_country(cursor):
     plt.figure(figsize=(12, 6))
     plt.bar(countries, totals)
 
-    plt.xlabel("Kraj")
-    plt.ylabel("Liczba produkcji")
-    plt.title("10 najpopularniejszych krajów produkcji na Netflix")
+    plt.xlabel("Country")
+    plt.ylabel("Number of production")
+    plt.title("Top 10 production country on Netflix")
 
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
@@ -86,8 +84,57 @@ def netflix_productions_by_type(cursor):
     plt.figure(figsize=(8, 8))
     plt.pie(sizes, labels=labels, autopct='%1.1f%%')
 
-    plt.title("Udział filmów i seriali na Netflix")
+    plt.title("Share of films and series on Netflix")
     plt.show()
+
+def generate_movie_duration_histogram(cursor):
+    cursor.execute("""
+        SELECT duration
+        FROM netflix_titles
+        WHERE type = 'Movie'
+          AND duration IS NOT NULL
+    """)
+
+    results = cursor.fetchall()
+
+    durations = []
+    for (duration,) in results:
+        match = re.search(r'\d+', duration)
+        if match:
+            durations.append(int(match.group()))
+
+    # wykres
+    plt.figure()
+    plt.hist(durations, bins=20, edgecolor='black')
+    plt.title("Histogram długości filmów")
+    plt.xlabel("Długość (minuty)")
+    plt.ylabel("Liczba filmów")
+    plt.show()
+
+def generate_titles_per_year_chart(cursor):
+    cursor.execute("""
+        SELECT release_year, COUNT(*) AS total_titles
+        FROM netflix_titles
+        WHERE release_year IS NOT NULL
+        GROUP BY release_year
+        ORDER BY release_year
+    """)
+
+    results = cursor.fetchall()
+
+    years = [row[0] for row in results]
+    counts = [row[1] for row in results]
+
+    # wykres liniowy
+    plt.figure()
+    plt.plot(years, counts, marker='o')
+
+    plt.title("Liczba produkcji Netflix w czasie")
+    plt.xlabel("Rok")
+    plt.ylabel("Liczba tytułów")
+    plt.grid()
+    plt.show()
+
 
 if __name__ == '__main__':
     netflix_statistics()
