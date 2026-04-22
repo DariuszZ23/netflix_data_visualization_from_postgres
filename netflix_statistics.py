@@ -106,9 +106,9 @@ def generate_movie_duration_histogram(cursor):
     # wykres
     plt.figure()
     plt.hist(durations, bins=20, edgecolor='black')
-    plt.title("Histogram długości filmów")
-    plt.xlabel("Długość (minuty)")
-    plt.ylabel("Liczba filmów")
+    plt.title("Histogram of film lengths")
+    plt.xlabel("Length (minutes)")
+    plt.ylabel("Number of films")
     plt.show()
 
 def generate_titles_per_year_chart(cursor):
@@ -129,10 +129,9 @@ def generate_titles_per_year_chart(cursor):
     plt.figure()
     plt.plot(years, counts, marker='o')
 
-    plt.title("Liczba produkcji Netflix w czasie")
-    plt.xlabel("Rok")
-    plt.ylabel("Liczba tytułów")
-    #plt.grid()
+    plt.title("Number of Netflix productions over time")
+    plt.xlabel("Year")
+    plt.ylabel("Number of titles")
     plt.show()
 
 
