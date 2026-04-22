@@ -132,7 +132,7 @@ def generate_titles_per_year_chart(cursor):
     plt.title("Liczba produkcji Netflix w czasie")
     plt.xlabel("Rok")
     plt.ylabel("Liczba tytułów")
-    plt.grid()
+    #plt.grid()
     plt.show()
 
 
