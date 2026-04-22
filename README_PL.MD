@@ -98,7 +98,6 @@ Poniżej przykładowe wykresy wygenerowane w projekcie:
 ### 🥧 Wykres kołowy – Udział filmów i seriali na Netflixie
 
 ![Figure_2.png](Figure_2.png)
-![]("C:\Users\Dariusz\PycharmProjects\netflix_data_visualization_from_postgres\Figure_2.png")
 ---
 
 ## 🧠 Technologie
