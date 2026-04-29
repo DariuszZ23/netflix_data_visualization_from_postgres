@@ -91,6 +91,7 @@ The line graph shows the number of films and series added over the years.
 
 This graph allows you to observe the dynamics of Netflix's library development and the periods of greatest growth in the number of available productions.
 
+
 ![Figure_4.png](Figure_4.png)
 ---
 
