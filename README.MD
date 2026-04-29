@@ -71,6 +71,26 @@ Below are example charts generated in the project:
 
  🥧 Pie Chart – Share of Movies and TV Shows on Netflix
 ![Figure_2.png](Figure_2.png)
+
+## 📊 Movie Length Histogram
+
+This graph shows the distribution of movie lengths available in the Netflix database.
+
+- X-axis: movie length in minutes
+- Y-axis: number of movies
+
+The histogram allows you to quickly see which time periods have the highest number of productions. This allows you to determine typical movie lengths and identify any outliers.
+![Figure_3.png](Figure_3.png)
+
+## 📊 Number of Productions Over Time
+
+The line graph shows the number of films and series added over the years.
+
+- X-axis: year of production (`release_year`)
+- Y-axis: number of titles
+
+This graph allows you to observe the dynamics of Netflix's library development and the periods of greatest growth in the number of available productions.
+![Figure_4.png](Figure_4.png)
 ---
 
 ## 🧠 Technologies
