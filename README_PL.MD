@@ -102,12 +102,23 @@ Poniżej przykładowe wykresy wygenerowane w projekcie:
 ## 📊 Histogram długości filmów
 
 Wykres przedstawia rozkład długości filmów dostępnych w bazie danych Netflix.
-![Figure_3.png](Figure_3.png)
+
 - Oś X: długość filmu w minutach  
 - Oś Y: liczba filmów  
 
 Histogram pozwala szybko zauważyć, w jakich przedziałach czasowych znajduje się najwięcej produkcji. Dzięki temu można określić typową długość filmów oraz zidentyfikować ewentualne wartości odstające.
+![Figure_3.png](Figure_3.png)
 
+## 📊 Liczba produkcji w czasie
+
+Wykres liniowy przedstawia liczbę filmów i seriali dodawanych na przestrzeni lat.
+
+- Oś X: rok produkcji (`release_year`)  
+- Oś Y: liczba tytułów  
+
+Dzięki temu wykresowi można zaobserwować dynamikę rozwoju biblioteki Netflixa oraz okresy największego wzrostu liczby dostępnych produkcji.
+
+![Figure_4.png](Figure_4.png)
 ---
 
 ## 🧠 Technologie
