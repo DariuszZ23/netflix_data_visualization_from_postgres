@@ -1,6 +1,6 @@
 # 🎬 Netflix Data Visualization (PostgreSQL)
 
-An analytical project aimed at exploring and visualizing data related to movies and TV shows available on Netflix, using a PostgreSQL database and Python.
+An educational project aimed at exploring, learning and visualizing data related to movies and TV shows available on Netflix, using a PostgreSQL database and Python.
 ---
 ## 📌 Project Description
 
