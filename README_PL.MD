@@ -98,6 +98,16 @@ Poniżej przykładowe wykresy wygenerowane w projekcie:
 ### 🥧 Wykres kołowy – Udział filmów i seriali na Netflixie
 
 ![Figure_2.png](Figure_2.png)
+
+## 📊 Histogram długości filmów
+
+Wykres przedstawia rozkład długości filmów dostępnych w bazie danych Netflix.
+![Figure_3.png](Figure_3.png)
+- Oś X: długość filmu w minutach  
+- Oś Y: liczba filmów  
+
+Histogram pozwala szybko zauważyć, w jakich przedziałach czasowych znajduje się najwięcej produkcji. Dzięki temu można określić typową długość filmów oraz zidentyfikować ewentualne wartości odstające.
+
 ---
 
 ## 🧠 Technologie
