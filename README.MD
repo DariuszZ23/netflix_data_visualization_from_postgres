@@ -80,6 +80,7 @@ This graph shows the distribution of movie lengths available in the Netflix data
 - Y-axis: number of movies
 
 The histogram allows you to quickly see which time periods have the highest number of productions. This allows you to determine typical movie lengths and identify any outliers.
+
 ![Figure_3.png](Figure_3.png)
 
 ## 📊 Number of Productions Over Time
